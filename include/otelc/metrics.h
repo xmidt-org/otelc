@@ -41,7 +41,7 @@ ot_meter_t *ot_meter_create(const ot_meter_provider_t *tp); /**< the provider to
  *  counter is created it exists for the duration of the program.
  */
 ot_counter_t *ot_create_counter(const ot_meter_t *m,                 /**< the meter that does the creation */
-                                const ot_string *name,               /**< the name of the counter */
+                                const struct ot_string *name,        /**< the name of the counter */
                                 const struct instrument_opts *opts); /**< additional options */
 
 
@@ -50,9 +50,9 @@ ot_counter_t *ot_create_counter(const ot_meter_t *m,                 /**< the me
  *  use.  If a new dimension of the meter is needed, this call will perform
  *  that operation as well.
  */
-ot_counter_t *ot_counter_find(const ot_meter_t *m,       /**< the meter to reference */
-                              const ot_string *name,     /**< the name of the counter to look for */
-                              struct ot_attributes *kv); /**< any additional attributes */
+ot_counter_t *ot_counter_find(const ot_meter_t *m,          /**< the meter to reference */
+                              const struct ot_string *name, /**< the name of the counter to look for */
+                              struct ot_attributes *kv);    /**< any additional attributes */
 
 
 /**
@@ -84,7 +84,7 @@ void ot_counter_inc(ot_counter_t *c); /**< the counter to increment */
  *  Once a counter is created it exists for the duration of the program.
  */
 ot_udcounter_t *ot_create_udcounter(const ot_meter_t *m,                 /**< the meter that does the creation */
-                                    const ot_string *name,               /**< the name of the counter */
+                                    const struct ot_string *name,        /**< the name of the counter */
                                     const struct instrument_opts *opts); /**< additional options */
 
 
@@ -93,9 +93,9 @@ ot_udcounter_t *ot_create_udcounter(const ot_meter_t *m,                 /**< th
  *  later use.  If a new dimension of the meter is needed, this call will
  *  perform that operation as well.
  */
-ot_udcounter_t *ot_udcounter_find(const ot_meter_t *m,       /**< the meter to reference */
-                                  const ot_string *name,     /**< the name of the counter to look for */
-                                  struct ot_attributes *kv); /**< any additional attributes */
+ot_udcounter_t *ot_udcounter_find(const ot_meter_t *m,          /**< the meter to reference */
+                                  const struct ot_string *name, /**< the name of the counter to look for */
+                                  struct ot_attributes *kv);    /**< any additional attributes */
 
 
 /**
@@ -122,7 +122,7 @@ void ot_udcounter_add(ot_udcounter_t *c, /**< the counter to increment */
  *  Once a histogram is created it exists for the duration of the program.
  */
 ot_histogram_t *ot_create_histogram(const ot_meter_t *m,                 /**< the meter that does the creation */
-                                    const ot_string *name,               /**< the name of the histogram */
+                                    const struct ot_string *name,        /**< the name of the histogram */
                                     const struct instrument_opts *opts); /**< additional options */
 
 
@@ -131,9 +131,9 @@ ot_histogram_t *ot_create_histogram(const ot_meter_t *m,                 /**< th
  *  later use.  If a new dimension of the meter is needed, this call will
  *  perform that operation as well.
  */
-ot_histogram_t *ot_histogram_find(const ot_meter_t *m,       /**< the meter to reference */
-                                  const ot_string *name,     /**< the name of the histogram to look for */
-                                  struct ot_attributes *kv); /**< any additional attributes */
+ot_histogram_t *ot_histogram_find(const ot_meter_t *m,          /**< the meter to reference */
+                                  const struct ot_string *name, /**< the name of the histogram to look for */
+                                  struct ot_attributes *kv);    /**< any additional attributes */
 
 
 /**
