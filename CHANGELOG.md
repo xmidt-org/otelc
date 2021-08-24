@@ -10,4 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/xmidt-org/otelc/compare/a8ab4716742ca159bee239245b99be16ccdeb411...HEAD
+## [v0.0.1]
+- Initial creation / release for trial usage.
+
+[Unreleased]: https://github.com/xmidt-org/otelc/compare/v0.0.1...HEAD
+[v0.0.1]: https://github.com/xmidt-org/otelc/compare/a8ab4716742ca159bee239245b99be16ccdeb411...v0.0.1
