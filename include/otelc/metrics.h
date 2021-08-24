@@ -1,7 +1,15 @@
 /* SPDX-FileCopyrightText: 2021 Comcast Cable Communications Management, LLC */
 /* SPDX-License-Identifier: Apache-2.0 */
 
-/* TODO: Very much a work in progress. */
+/* This is still a work in progress.
+ *
+ *  Missing:
+ *      - Asynchronous Counter focused
+ *      - Asynchronous Gauge focused
+ *
+ *  Unsure:
+ *      - Contexts & how that will work
+ */
 
 #ifndef __METRICS_H__
 #define __METRICS_H__
@@ -141,22 +149,14 @@ ot_histogram_t *ot_histogram_find(const ot_meter_t *m,          /**< the meter t
  *  configuration.  Like ot_histogram_find() this function can create new
  *  histogram that express the specified dimensions.
  */
-ot_histogram_t *ot_histogram_find_with(const ot_histogram_t *c,   /**< find a more specific histogram */
+ot_histogram_t *ot_histogram_find_with(const ot_histogram_t *h,   /**< find a more specific histogram */
                                        struct ot_attributes *kv); /**< any additional attributes */
 
 
 /**
  *  Records a measurement with the specified histogram.
  */
-void ot_histogram_record(ot_histogram_t *c,   /**< the histogram to record with */
+void ot_histogram_record(ot_histogram_t *h,   /**< the histogram to record with */
                          double measurement); /**< the amount to increment */
-
-#if 0
-/* Asynchronous Counter focused */
-/* TODO for now */
-
-/* Asynchronous Gauge focused */
-/* TODO for now */
-#endif
 
 #endif

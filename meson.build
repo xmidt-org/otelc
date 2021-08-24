@@ -46,7 +46,8 @@ install_headers([inc_base+'/common.h',
                  ver_h],
                  subdir: meson.project_name())
 
-sources = ['src/empty.c']
+sources = ['src/metrics.c',
+           'src/tracing.c']
 
 libotelc = library(meson.project_name(),
                   sources,
