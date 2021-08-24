@@ -14,7 +14,7 @@ on:
     tags-ignore:
       - 'v[0-9]+.[0-9]+.[0-9]+'
     branches:
-      - main
+      - coverity  # disable for now
 
 jobs:
   test:
