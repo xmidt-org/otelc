@@ -47,6 +47,7 @@ install_headers([inc_base+'/common.h',
                  subdir: meson.project_name())
 
 sources = ['src/metrics.c',
+           'src/time.c',
            'src/tracing.c']
 
 libotelc = library(meson.project_name(),
@@ -77,7 +78,12 @@ if not meson.is_subproject()
   test_args = ['-fprofile-arcs', '-ftest-coverage', '-O0']
   cunit_dep = dependency('cunit')
 
-  tests = {}
+  tests = {
+    'test_time': {
+      'srcs': [ 'tests/test_time.c',
+                'src/time.c' ]
+    },
+  }
 
   foreach test, vals : tests
     if 'opt' in vals and not get_option(vals['opt'])
@@ -89,6 +95,7 @@ if not meson.is_subproject()
       endif
       test(test,
            executable(test, vals['srcs'],
+                      include_directories: inc,
                       dependencies: deps,
                       install: false,
                       link_args: test_args))
