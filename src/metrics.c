@@ -165,6 +165,5 @@ void ot_histogram_record(ot_histogram_t *h,
 {
     (void)h;
     (void)measurement;
-    return NULL;
 }
 
