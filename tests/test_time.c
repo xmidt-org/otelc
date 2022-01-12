@@ -1,4 +1,4 @@
-/* SPDX-FileCopyrightText: 2021 Comcast Cable Communications Management, LLC */
+/* SPDX-FileCopyrightText: 2021-2022 Comcast Cable Communications Management, LLC */
 /* SPDX-License-Identifier: Apache-2.0 */
 
 /* Needed for clock_gettime */
@@ -24,7 +24,7 @@ static int clock_mono(struct timespec *tp)
 {
     int rv = __mono->rv;
 
-    tp->tv_sec = __mono->s;
+    tp->tv_sec  = __mono->s;
     tp->tv_nsec = __mono->ns;
 
     if (__mono->more) {
@@ -39,7 +39,7 @@ static int clock_real(struct timespec *tp)
 {
     int rv = __rt->rv;
 
-    tp->tv_sec = __rt->s;
+    tp->tv_sec  = __rt->s;
     tp->tv_nsec = __rt->ns;
 
     if (__rt->more) {
@@ -64,9 +64,9 @@ int clock_gettime(clockid_t clockid, struct timespec *tp)
 void test_boot_time()
 {
     struct test_clock clocks[3] = {
-        { .s = 100, .ns = 0, .rv = 0, .more = 1 },
-        { .s = 120, .ns = 1000000, .rv = 0, .more = 1 },
-        { .s = 0, .ns = 0, .rv = -1, .more = 0 },
+        {.s = 100,       .ns = 0,  .rv = 0, .more = 1},
+        {.s = 120, .ns = 1000000,  .rv = 0, .more = 1},
+        {  .s = 0,       .ns = 0, .rv = -1, .more = 0},
     };
     int64_t t1 = 0LL;
     int64_t t2 = 0LL;
@@ -103,7 +103,7 @@ void add_suites(CU_pSuite *suite)
 /*----------------------------------------------------------------------------*/
 int main(void)
 {
-    unsigned rv = 1;
+    unsigned rv     = 1;
     CU_pSuite suite = NULL;
 
     if (CUE_SUCCESS == CU_initialize_registry()) {

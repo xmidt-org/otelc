@@ -1,4 +1,4 @@
-/* SPDX-FileCopyrightText: 2021 Comcast Cable Communications Management, LLC */
+/* SPDX-FileCopyrightText: 2021-2022 Comcast Cable Communications Management, LLC */
 /* SPDX-License-Identifier: Apache-2.0 */
 
 /* Needed for clock_gettime */
@@ -94,8 +94,8 @@ int64_t time_boot_now_ns(void)
 
 double time_diff(int64_t start, int64_t end)
 {
-    double s = (double)start;
-    double e = (double)end;
+    double s = (double) start;
+    double e = (double) end;
 
     return (e - s) / 1000000000;
 }
